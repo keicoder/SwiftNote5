@@ -26,4 +26,14 @@
 @dynamic hasNoteStar;
 @dynamic noteSection;
 
+
+
+//invoked automatically by the Core Data framework when the receiver is first inserted into a managed object context.
+//typically use this method to initialize special default property values.
+//this method is invoked only once in the object's lifetime.
+-(void) awakeFromInsert {
+    [super awakeFromInsert];
+    self.noteModifiedDate = [NSDate date];
+}
+
 @end

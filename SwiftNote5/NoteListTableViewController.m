@@ -8,7 +8,6 @@
 
 #import "NoteListTableViewController.h"
 #import "Note.h"
-#import "AddNoteViewController.h"
 
 @interface NoteListTableViewController ()
 
@@ -18,6 +17,54 @@
 @implementation NoteListTableViewController
 {
     NSMutableArray *_allNotes;
+}
+
+@synthesize fetchedResultsController = _fetchedResultsController;
+
+
+#pragma mark - AddNoteViewController Delegate 메소드
+
+-(void)addNoteViewControllerDidCancel:(Note *)noteToDelete {
+    if (debug==1) {NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));}
+    
+    NSManagedObjectContext *context = self.managedObjectContext;
+    [context deleteObject:noteToDelete];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"Dismissing View");
+        NSLog(@"View done dismissing");
+    }];
+}
+
+-(void) addNoteViewControllerDidSave {
+    if (debug==1) {NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));}
+    
+    NSError *error = nil;
+    NSManagedObjectContext *context = self.managedObjectContext;
+    if (![context save:&error]) {
+        NSLog(@"Error! %@", error);
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"Dismissing View");
+        NSLog(@"View done dismissing");
+    }];
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"AddNote"]) {
+        
+        AddNoteViewController *anvc = (AddNoteViewController *)[segue destinationViewController];
+        anvc.delegate =self;
+        
+//        Note *newNote = (Note *)[NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:[self managedObjectContext]];
+//        
+//        anvc.currentNote = newNote;
+//        anvc.currentNote.noteTitle = @"";
+//        anvc.currentNote.noteBody = @"";
+    }
 }
 
 
@@ -33,6 +80,14 @@
     /* Set the note's attributes */
     note.noteTitle = @"Walk the dog";
     [_allNotes addObject:note];
+    
+    
+    //performFetch
+    NSError *error = nil;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        NSLog(@"Error! %@",error);
+        abort();
+    }
     
     [self.tableView reloadData];
 }
@@ -73,25 +128,35 @@
 {
     if (debug==1) {NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));}
     
-    return 1;
+    return [[self.fetchedResultsController sections]count];
 }
 
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_allNotes count];
+    id <NSFetchedResultsSectionInfo> secInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [secInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    Note *note = _allNotes[indexPath.row];
+    // Configure the cell...
+    Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = note.noteTitle;
     
     return cell;
 }
+
+
+-(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    return [[[self.fetchedResultsController sections]objectAtIndex:section]name];
+}
+
 
 //- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 //{
@@ -120,10 +185,7 @@
 //    return NO;
 //}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-}
+
 
 #pragma mark - Fetched results controller
 
@@ -149,7 +211,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"noteSection" cacheName:nil];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"noteModifiedDate" cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     

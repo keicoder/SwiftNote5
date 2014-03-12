@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C152F9F918D0021100EBFBB9 /* CoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C152F9F818D0021100EBFBB9 /* CoreViewController.m */; };
 		C1DAB27F18CF14E200E53D49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAB27E18CF14E200E53D49 /* Foundation.framework */; };
 		C1DAB28118CF14E200E53D49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAB28018CF14E200E53D49 /* CoreGraphics.framework */; };
 		C1DAB28318CF14E200E53D49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAB28218CF14E200E53D49 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C152F9F718D0021100EBFBB9 /* CoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreViewController.h; sourceTree = "<group>"; };
+		C152F9F818D0021100EBFBB9 /* CoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreViewController.m; sourceTree = "<group>"; };
 		C1DAB27B18CF14E200E53D49 /* SwiftNote5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNote5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DAB27E18CF14E200E53D49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C1DAB28018CF14E200E53D49 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C152F9F618D001F400EBFBB9 /* CoreController */ = {
+			isa = PBXGroup;
+			children = (
+				C152F9F718D0021100EBFBB9 /* CoreViewController.h */,
+				C152F9F818D0021100EBFBB9 /* CoreViewController.m */,
+			);
+			name = CoreController;
+			sourceTree = "<group>";
+		};
 		C1DAB27218CF14E200E53D49 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +138,7 @@
 		C1DAB28618CF14E200E53D49 /* SwiftNote5 */ = {
 			isa = PBXGroup;
 			children = (
+				C152F9F618D001F400EBFBB9 /* CoreController */,
 				C1DAB2BC18CF15E000E53D49 /* Data */,
 				C1DAB2BD18CF15EA00E53D49 /* Classes */,
 				C1DAB29218CF14E200E53D49 /* Main.storyboard */,
@@ -284,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C152F9F918D0021100EBFBB9 /* CoreViewController.m in Sources */,
 				C1DAB29D18CF14E200E53D49 /* AddNoteViewController.m in Sources */,
 				C1DAB29A18CF14E200E53D49 /* NoteListTableViewController.m in Sources */,
 				C1DAB29118CF14E200E53D49 /* AppDelegate.m in Sources */,
@@ -494,6 +508,7 @@
 				C1DAB2B818CF14E200E53D49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C1DAB2B918CF14E200E53D49 /* Build configuration list for PBXNativeTarget "SwiftNote5Tests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +517,7 @@
 				C1DAB2BB18CF14E200E53D49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

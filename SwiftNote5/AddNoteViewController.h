@@ -7,7 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreViewController.h"
+#import "Note.h"
 
-@interface AddNoteViewController : UIViewController
+@protocol AddNoteViewControllerDelegate;
+
+
+@interface AddNoteViewController : CoreViewController <UITextViewDelegate, UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *noteTitleTextField;
+@property (strong, nonatomic) IBOutlet UITextView *noteTextView;
+
+@property (nonatomic, weak) id <AddNoteViewControllerDelegate> delegate;
+@property (nonatomic, strong) Note *currentNote;
+
+@end
+
+#pragma mark - AddNoteViewControllerDelegate : 컨텍스트의 저장/취소/모달 뷰 해제를 위한 델리게이트
+
+@protocol AddNoteViewControllerDelegate
+
+-(void)addNoteViewControllerDidSave;
+-(void)addNoteViewControllerDidCancel:(Note *)noteToDelete;
 
 @end

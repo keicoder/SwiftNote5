@@ -64,7 +64,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yeL-sl-LvY">
                             <connections>
-                                <segue destination="F2f-q8-19L" kind="modal" identifier="addNote" id="wMS-Zo-7un"/>
+                                <segue destination="F2f-q8-19L" kind="modal" identifier="AddNote" id="wMS-Zo-7un"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -115,6 +115,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noteTextView" destination="aqB-Uh-czl" id="4dF-zt-6fz"/>
+                        <outlet property="noteTitleTextField" destination="i2M-rF-otm" id="6dm-aP-Gbc"/>
                         <outlet property="saveButton" destination="3RP-NH-LT5" id="xAd-8m-Ogh"/>
                     </connections>
                 </viewController>

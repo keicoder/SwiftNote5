@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddNoteViewController.h"
 
-#import <CoreData/CoreData.h>
+@interface NoteListTableViewController : UITableViewController <AddNoteViewControllerDelegate, NSFetchedResultsControllerDelegate>
 
-@interface NoteListTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
-
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController; //manage the results returned from a Core Data fetch request to provide data for a UITableView object
 
 @end
