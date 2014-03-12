@@ -16,8 +16,8 @@
 		C1DAB29118CF14E200E53D49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DAB29018CF14E200E53D49 /* AppDelegate.m */; };
 		C1DAB29418CF14E200E53D49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1DAB29218CF14E200E53D49 /* Main.storyboard */; };
 		C1DAB29718CF14E200E53D49 /* SwiftNote5.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1DAB29518CF14E200E53D49 /* SwiftNote5.xcdatamodeld */; };
-		C1DAB29A18CF14E200E53D49 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DAB29918CF14E200E53D49 /* MasterViewController.m */; };
-		C1DAB29D18CF14E200E53D49 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DAB29C18CF14E200E53D49 /* DetailViewController.m */; };
+		C1DAB29A18CF14E200E53D49 /* NoteListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DAB29918CF14E200E53D49 /* NoteListTableViewController.m */; };
+		C1DAB29D18CF14E200E53D49 /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DAB29C18CF14E200E53D49 /* AddNoteViewController.m */; };
 		C1DAB29F18CF14E200E53D49 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1DAB29E18CF14E200E53D49 /* Images.xcassets */; };
 		C1DAB2A618CF14E200E53D49 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAB2A518CF14E200E53D49 /* XCTest.framework */; };
 		C1DAB2A718CF14E200E53D49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAB27E18CF14E200E53D49 /* Foundation.framework */; };
@@ -25,6 +25,7 @@
 		C1DAB2A918CF14E200E53D49 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DAB28418CF14E200E53D49 /* CoreData.framework */; };
 		C1DAB2B118CF14E200E53D49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1DAB2AF18CF14E200E53D49 /* InfoPlist.strings */; };
 		C1DAB2B318CF14E200E53D49 /* SwiftNote5Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DAB2B218CF14E200E53D49 /* SwiftNote5Tests.m */; };
+		C1DAB2C318CF1FF300E53D49 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DAB2C218CF1FF300E53D49 /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,16 +52,18 @@
 		C1DAB29018CF14E200E53D49 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C1DAB29318CF14E200E53D49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1DAB29618CF14E200E53D49 /* SwiftNote5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftNote5.xcdatamodel; sourceTree = "<group>"; };
-		C1DAB29818CF14E200E53D49 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		C1DAB29918CF14E200E53D49 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		C1DAB29B18CF14E200E53D49 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		C1DAB29C18CF14E200E53D49 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C1DAB29818CF14E200E53D49 /* NoteListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteListTableViewController.h; sourceTree = "<group>"; };
+		C1DAB29918CF14E200E53D49 /* NoteListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteListTableViewController.m; sourceTree = "<group>"; };
+		C1DAB29B18CF14E200E53D49 /* AddNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
+		C1DAB29C18CF14E200E53D49 /* AddNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
 		C1DAB29E18CF14E200E53D49 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C1DAB2A418CF14E200E53D49 /* SwiftNote5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftNote5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DAB2A518CF14E200E53D49 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C1DAB2AE18CF14E200E53D49 /* SwiftNote5Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwiftNote5Tests-Info.plist"; sourceTree = "<group>"; };
 		C1DAB2B018CF14E200E53D49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C1DAB2B218CF14E200E53D49 /* SwiftNote5Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftNote5Tests.m; sourceTree = "<group>"; };
+		C1DAB2C118CF1FF300E53D49 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		C1DAB2C218CF1FF300E53D49 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,15 +126,10 @@
 		C1DAB28618CF14E200E53D49 /* SwiftNote5 */ = {
 			isa = PBXGroup;
 			children = (
-				C1DAB28F18CF14E200E53D49 /* AppDelegate.h */,
-				C1DAB29018CF14E200E53D49 /* AppDelegate.m */,
+				C1DAB2BC18CF15E000E53D49 /* Data */,
+				C1DAB2BD18CF15EA00E53D49 /* Classes */,
 				C1DAB29218CF14E200E53D49 /* Main.storyboard */,
-				C1DAB29818CF14E200E53D49 /* MasterViewController.h */,
-				C1DAB29918CF14E200E53D49 /* MasterViewController.m */,
-				C1DAB29B18CF14E200E53D49 /* DetailViewController.h */,
-				C1DAB29C18CF14E200E53D49 /* DetailViewController.m */,
 				C1DAB29E18CF14E200E53D49 /* Images.xcassets */,
-				C1DAB29518CF14E200E53D49 /* SwiftNote5.xcdatamodeld */,
 				C1DAB28718CF14E200E53D49 /* Supporting Files */,
 			);
 			path = SwiftNote5;
@@ -164,6 +162,29 @@
 				C1DAB2AF18CF14E200E53D49 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C1DAB2BC18CF15E000E53D49 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAB29518CF14E200E53D49 /* SwiftNote5.xcdatamodeld */,
+				C1DAB2C118CF1FF300E53D49 /* Note.h */,
+				C1DAB2C218CF1FF300E53D49 /* Note.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		C1DAB2BD18CF15EA00E53D49 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C1DAB28F18CF14E200E53D49 /* AppDelegate.h */,
+				C1DAB29018CF14E200E53D49 /* AppDelegate.m */,
+				C1DAB29818CF14E200E53D49 /* NoteListTableViewController.h */,
+				C1DAB29918CF14E200E53D49 /* NoteListTableViewController.m */,
+				C1DAB29B18CF14E200E53D49 /* AddNoteViewController.h */,
+				C1DAB29C18CF14E200E53D49 /* AddNoteViewController.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1DAB29D18CF14E200E53D49 /* DetailViewController.m in Sources */,
-				C1DAB29A18CF14E200E53D49 /* MasterViewController.m in Sources */,
+				C1DAB29D18CF14E200E53D49 /* AddNoteViewController.m in Sources */,
+				C1DAB29A18CF14E200E53D49 /* NoteListTableViewController.m in Sources */,
 				C1DAB29118CF14E200E53D49 /* AppDelegate.m in Sources */,
+				C1DAB2C318CF1FF300E53D49 /* Note.m in Sources */,
 				C1DAB28D18CF14E200E53D49 /* main.m in Sources */,
 				C1DAB29718CF14E200E53D49 /* SwiftNote5.xcdatamodeld in Sources */,
 			);

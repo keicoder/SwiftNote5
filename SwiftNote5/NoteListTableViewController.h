@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  NoteListTableViewController.h
 //  SwiftNote5
 //
 //  Created by jun on 2014. 3. 11..
@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface NoteListTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
