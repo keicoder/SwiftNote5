@@ -8,6 +8,7 @@
 
 #import "NoteListTableViewController.h"
 #import "Note.h"
+#import "DisplayEditViewController.h"
 
 @interface NoteListTableViewController ()
 
@@ -70,6 +71,14 @@
                                   inManagedObjectContext:[self managedObjectContext]];
         
         anvc.currentNote = newNote;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"EditNote"]) {
+        
+        DisplayEditViewController *devc = (DisplayEditViewController *)[segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Note *selectedNote = (Note *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+        devc.currentNote = selectedNote;
     }
 }
 

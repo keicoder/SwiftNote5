@@ -18,10 +18,6 @@
 
 @implementation AddNoteViewController
 
-@synthesize noteTitleTextField;
-@synthesize noteTextView;
-
-
 
 #pragma mark - View Life Cycle
 
@@ -58,8 +54,9 @@
     if (debug==1) {NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));}
     
     //save the context
-    [self.currentNote setNoteTitle:noteTitleTextField.text];
-    [self.currentNote setNoteBody:noteTextView.text];
+    [self.currentNote setNoteTitle:self.noteTitleTextField.text];
+    [self.currentNote setNoteBody:self.noteTextView.text];
+    
     [self.delegate addNoteViewControllerDidSave];
 }
 

@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="783" y="-302"/>
         </scene>
-        <!--View Controller - Detail-->
+        <!--Display Edit View Controller - Detail-->
         <scene sceneID="DP7-Aq-E14">
             <objects>
-                <viewController title="Detail" id="lPF-lD-PG5" sceneMemberID="viewController">
+                <viewController title="Detail" id="lPF-lD-PG5" customClass="DisplayEditViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sgi-nM-6fi"/>
                         <viewControllerLayoutGuide type="bottom" id="mtp-qE-6PO"/>
@@ -167,8 +167,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="jvW-Cs-WzZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="WrS-k5-um6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="WrS-k5-um6">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="lPF-lD-PG5" id="AIi-9f-bJ5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteTextView" destination="2om-Bo-xRU" id="yoi-0F-jM1"/>
+                        <outlet property="noteTitleTextField" destination="2j9-GY-nAE" id="qK6-gw-eOf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVb-D0-2ep" sceneMemberID="firstResponder"/>
             </objects>
