@@ -199,12 +199,6 @@
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"noteTitle" cacheName:nil];
     _fetchedResultsController.delegate = self;
     
-    //	NSError *error = nil;
-    //	if (![self.fetchedResultsController performFetch:&error]) {
-    //	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-    //	    abort();
-    //	}
-    
     return _fetchedResultsController;
 }
 
