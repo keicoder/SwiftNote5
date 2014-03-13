@@ -139,8 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				C152F9F618D001F400EBFBB9 /* CoreController */,
-				C1DAB2BC18CF15E000E53D49 /* Data */,
 				C1DAB2BD18CF15EA00E53D49 /* Classes */,
+				C1DAB2BC18CF15E000E53D49 /* Data */,
 				C1DAB29218CF14E200E53D49 /* Main.storyboard */,
 				C1DAB29E18CF14E200E53D49 /* Images.xcassets */,
 				C1DAB28718CF14E200E53D49 /* Supporting Files */,
@@ -180,9 +180,9 @@
 		C1DAB2BC18CF15E000E53D49 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C1DAB29518CF14E200E53D49 /* SwiftNote5.xcdatamodeld */,
 				C1DAB2C118CF1FF300E53D49 /* Note.h */,
 				C1DAB2C218CF1FF300E53D49 /* Note.m */,
+				C1DAB29518CF14E200E53D49 /* SwiftNote5.xcdatamodeld */,
 			);
 			name = Data;
 			sourceTree = "<group>";

@@ -15,24 +15,26 @@
 @end
 
 
+
 @implementation AddNoteViewController
 
 @synthesize noteTitleTextField;
 @synthesize noteTextView;
 
+
+
+#pragma mark - View Life Cycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //noteTitleTextField.text = [self.currentNote noteTitle];
-    //noteTextView.text = [self.currentNote noteBody];
-    
-    // CoreViewController의 roundCorneredTextView 메소드로 테두리가 둥근 UITextView 만들기
-    [super roundCorneredTextView:self.noteTextView];
-    
-    
+    [super roundCorneredTextView:self.noteTextView]; // CoreViewController의 roundCorneredTextView 메소드로 테두리가 둥근 UITextView 만들기
 }
 
+
+
+#pragma mark - Memory Warning
 
 - (void)didReceiveMemoryWarning
 {
@@ -41,7 +43,7 @@
 
 
 
-#pragma mark - 버튼 액션 메소드: Save나 Cancel 버튼을 탭했을 때 코어 데이터에 변경 사항 반영
+#pragma mark - Button Action Method: save나 cancel 버튼 click시 delegate method call
 
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender {
     if (debug==1) {NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));}

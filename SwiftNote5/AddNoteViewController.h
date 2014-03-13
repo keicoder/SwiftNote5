@@ -24,7 +24,8 @@
 
 @end
 
-#pragma mark - AddNoteViewControllerDelegate : 컨텍스트의 저장/취소/모달 뷰 해제를 위한 델리게이트
+
+#pragma mark - AddNoteViewControllerDelegate : AddView의 상태변경을 테이블 뷰에 알려주고 저장/취소/뷰 해제 등을 하기 위한 델리게이트 메소드
 
 @protocol AddNoteViewControllerDelegate
 
