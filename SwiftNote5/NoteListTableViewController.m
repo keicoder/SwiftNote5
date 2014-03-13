@@ -31,8 +31,7 @@
     [context deleteObject:noteToDelete];
     
     [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"Dismissing View");
-        NSLog(@"View done dismissing");
+        NSLog(@"Delete noteToDelete object and dismissing AddNoteView Complete!");
     }];
 }
 
@@ -46,8 +45,7 @@
     }
     
     [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"Dismissing View");
-        NSLog(@"View done dismissing");
+        NSLog(@"Save to Core Data and dismissing AddNoteView Complete!");
     }];
 }
 
@@ -56,7 +54,8 @@
     
     if ([[segue identifier] isEqualToString:@"AddNote"]) {
         
-        AddNoteViewController *anvc = (AddNoteViewController *)[segue destinationViewController];
+        UINavigationController *nav = [segue destinationViewController];
+        AddNoteViewController *anvc = (AddNoteViewController *)[nav topViewController];
         anvc.delegate =self;
         
 //        Note *newNote = (Note *)[NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:[self managedObjectContext]];

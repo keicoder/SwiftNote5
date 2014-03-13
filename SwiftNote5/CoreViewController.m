@@ -32,6 +32,7 @@
     [self dismissViewControllerAnimated:YES completion:^{
         // 이 코드 블럭에 집어넣는 코드는 뷰 컨트롤러가 사라진 후 실행된다.
         // 오브젝티브 C 에서 블록은 변수처럼 넘겨줄 수 있는 코드 영역임.
+        NSLog(@"View done dismissing");
         NSLog(@"Dismiss Complete!");
     }];
 }

@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *noteTitleTextField;
 @property (strong, nonatomic) IBOutlet UITextView *noteTextView;
 
+//AddNoteViewControllerDelegate
 @property (nonatomic, weak) id <AddNoteViewControllerDelegate> delegate;
 @property (nonatomic, strong) Note *currentNote;
 

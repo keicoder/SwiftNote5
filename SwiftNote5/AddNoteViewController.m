@@ -8,7 +8,7 @@
 
 #import "AddNoteViewController.h"
 
-@interface AddNoteViewController ()
+@interface AddNoteViewController () <UITextViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
@@ -17,12 +17,15 @@
 
 @implementation AddNoteViewController
 
+@synthesize noteTitleTextField;
+@synthesize noteTextView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.noteTitleTextField.text = [self.currentNote noteTitle];
-    self.noteTextView.text = [self.currentNote noteBody];
+    //noteTitleTextField.text = [self.currentNote noteTitle];
+    //noteTextView.text = [self.currentNote noteBody];
     
     // CoreViewController의 roundCorneredTextView 메소드로 테두리가 둥근 UITextView 만들기
     [super roundCorneredTextView:self.noteTextView];
@@ -30,40 +33,32 @@
     
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
 
+
+
+#pragma mark - 버튼 액션 메소드: Save나 Cancel 버튼을 탭했을 때 코어 데이터에 변경 사항 반영
+
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender {
     if (debug==1) {NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));}
     
-    // dismiss and remove the object
+    //remove the object
     [self.delegate addNoteViewControllerDidCancel:[self currentNote]];
-    
-    [super dismissView:sender];
-    
-    //    [self dismissViewControllerAnimated:YES completion:^{
-    //        NSLog(@"Dismissing View");
-    //        NSLog(@"View done dismissing");
-    //    }];
 }
+
+
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
     if (debug==1) {NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));}
     
-    // dismiss and save the context
-    [self.currentNote setNoteTitle:self.noteTextView.text];
-    [self.currentNote setNoteBody:self.noteTextView.text];
-    
+    //save the context
+    [self.currentNote setNoteTitle:noteTitleTextField.text];
+    [self.currentNote setNoteBody:noteTextView.text];
     [self.delegate addNoteViewControllerDidSave];
-    
-    [super dismissView:sender];
-    
-    //    [self dismissViewControllerAnimated:YES completion:^{
-    //        NSLog(@"Dismissing View");
-    //        NSLog(@"View done dismissing");
-    //    }];
 }
 
 
