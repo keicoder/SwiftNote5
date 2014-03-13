@@ -39,16 +39,6 @@
 
 
 
-#pragma mark - Memory Warning
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 #pragma mark - Bar Button Action Method: 컨텍스트 저장, 뷰 pop
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender
@@ -61,6 +51,19 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+
+#pragma mark - Memory Warning
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+
 
 
 
